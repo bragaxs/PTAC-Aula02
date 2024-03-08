@@ -1,7 +1,7 @@
-export default function Header(){
+export default function Footer(){
     return(
         <footer>
-            <h1>Rodapé</h1>
+            <h1 className="text-footer">Desenvolvido por Vitório Braga</h1>
         </footer>
     );
 }
