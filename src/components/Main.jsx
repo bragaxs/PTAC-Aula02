@@ -1,16 +1,28 @@
-import { useState } from "react"
+import { useState } from "react";
 
-export default function Main(){
-    const [nome, setNome] = useState(true);
-    
-    return(
-        <main>
-        <input 
-        type="text" 
-        name="" id=""
-        onChange={(event)=> setNome(event.target.event)}
+export default function Main() {
+  const [nome, setNome] = useState("");
+  const [telefone, setTelefone] = useState("");
+
+  return (
+    <main>
+      <form>
+        <label htmlFor="title">Dados:</label>
+        <input
+          type="text"
+          name=""
+          id="title"
+          onChange={(event) => setNome(event.target.event)}
         />
         {nome}
+        <input
+          type="number"
+          name=""
+          id=""
+          onChange={(event) => setTelefone(event.target.event)}
+        />
+        {telefone}
+      </form>
     </main>
-);
+  );
 }
