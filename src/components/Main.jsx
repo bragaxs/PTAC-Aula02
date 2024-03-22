@@ -2,11 +2,22 @@ import { useState } from "react";
 
 export default function Main() {
   const [nome, setNome] = useState("");
-  const [telefone, setTelefone] = useState("");
-
+  const [telefone, setTelefone] = useState();
+  const [listaContato, setListaContato] = useState([]);
+  const [cpf, setCpf] = useState()
+  const registrar = (event) =>{
+    event.preventDefault();
+    alert("Ola, dados enviados!")
+    setListaContato([...listaContato,{
+      nomeSalvo: nome,
+      telefoneSalvo: telefone,
+      cpf: cpf
+    }])
+  };
+  console.table(listaContato)
   return (
     <main>
-      <form>
+      <form onSubmit={registrar}>
         <label htmlFor="title">Dados:</label>
         <input
           type="text"
@@ -21,8 +32,8 @@ export default function Main() {
           id=""
           onChange={(event) => setTelefone(event.target.event)}
         />
-        <button className="cssforbutton">Enviar dados</button>
         {telefone}
+        <button className="cssforbutton">Enviar dados</button>
       </form>
     </main>
   );
