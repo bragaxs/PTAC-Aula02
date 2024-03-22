@@ -21,6 +21,7 @@ export default function Main() {
           id=""
           onChange={(event) => setTelefone(event.target.event)}
         />
+        <button className="cssforbutton">Enviar dados</button>
         {telefone}
       </form>
     </main>
