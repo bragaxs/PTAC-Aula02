@@ -4,7 +4,8 @@ export default function Main() {
   const [nome, setNome] = useState("");
   const [telefone, setTelefone] = useState();
   const [listaContato, setListaContato] = useState([]);
-  const [cpf, setCpf] = useState()
+  const [cpf, setCpf] = useState();
+  
   const registrar = (event) =>{
     event.preventDefault();
     alert("Ola, dados enviados!")
@@ -23,18 +24,25 @@ export default function Main() {
           type="text"
           name=""
           id="title"
-          onChange={(event) => setNome(event.target.event)}
+          onChange={(event) => setNome(event.target.value)}
         />
         {nome}
         <input
           type="number"
           name=""
           id=""
-          onChange={(event) => setTelefone(event.target.event)}
+          onChange={(event) => setTelefone(event.target.value)}
         />
         {telefone}
         <button className="cssforbutton">Enviar dados</button>
       </form>
+      {listaContato.map((contato, index)=> 
+      <div key={index}>
+        <p>
+          {contato.nomeSalvo}
+          {contato.telefoneSalvo}
+        </p>
+      </div>)}
     </main>
   );
 }
